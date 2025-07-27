@@ -1,7 +1,7 @@
 "use client";
 import ProfilePicture from "@/app/_components/ProfilePicture";
 import { CommentAndAuthor } from "@/app/(main)/interfaces";
-import { Box, Flex, Text } from "@radix-ui/themes";
+import { Box, Button, Flex, Text } from "@radix-ui/themes";
 import React, { useContext, useEffect, useState } from "react";
 import NewComment from "./NewComment";
 // @ts-ignore
@@ -36,7 +36,7 @@ const Comments = ({
       mx={{ initial: "2", sm: "8" }}
       my="5"
       style={{
-        backgroundColor: "var(--accent-4)",
+        backgroundColor: "var(--accent-3)",
       }}
       className={"rounded-xl "}
     >
@@ -71,7 +71,9 @@ const Comments = ({
                   action={() => deleteComment(comment.id)}
                   label="this comment"
                   trigger={
-                    <button className=" text-red-600 text-sm">Delete</button>
+                    <Button variant="soft" size="1" color="red">
+                      Delete
+                    </Button>
                   }
                 />
               )}

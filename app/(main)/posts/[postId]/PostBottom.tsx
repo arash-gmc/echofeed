@@ -69,8 +69,8 @@ const PostBottom = ({ postId, comments, authorId, postText }: Props) => {
             action={() => deletePost()}
             label="this post"
             trigger={
-              <Button variant="soft" color="red">
-                <Text size="5">
+              <Button variant="outline" color="red">
+                <Text size="5" color="red">
                   <MdDelete />
                 </Text>
               </Button>

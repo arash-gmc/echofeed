@@ -1,6 +1,6 @@
 import SinglePost from "@/app/(main)/posts/_components/SinglePost";
 import prisma from "@/prisma/client";
-import { Container } from "@radix-ui/themes";
+import { Box, Container } from "@radix-ui/themes";
 import { notFound } from "next/navigation";
 import React from "react";
 import Comments from "../_components/Comments";
@@ -23,15 +23,17 @@ const PostDetails = async ({ params }: Props) => {
 
   if (!post) notFound();
   return (
-    <Container mt="1" px="3">
-      <SinglePost rawPost={post} postDetail={true} />
-      <PostBottom
-        postId={params.postId}
-        authorId={post.authorId}
-        comments={comments}
-        postText={post.text}
-      />
-      <Comments postId={params.postId} initialComments={comments} />
+    <Container px="3">
+      <Box pt={{ initial: "4", sm: "8" }}>
+        <SinglePost rawPost={post} postDetail={true} />
+        <PostBottom
+          postId={params.postId}
+          authorId={post.authorId}
+          comments={comments}
+          postText={post.text}
+        />
+        <Comments postId={params.postId} initialComments={comments} />
+      </Box>
     </Container>
   );
 };

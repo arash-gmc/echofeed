@@ -31,8 +31,8 @@ const EditPost = ({ authorId, initialText, postId }: Props) => {
   return (
     <Popover.Root>
       <Popover.Trigger>
-        <Button variant="soft" color="mint">
-          <Text size="5">
+        <Button variant="outline" color="amber">
+          <Text size="5" color="amber">
             <CiEdit />
           </Text>
         </Button>

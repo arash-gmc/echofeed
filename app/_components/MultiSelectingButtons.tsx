@@ -25,10 +25,7 @@ const MultiSelectingButtons = ({
   }
 
   const buttonClass =
-    "py-3 px-4 inline-flex items-center gap-x-2  text-sm focus:z-10 border  " +
-    (theme === "light"
-      ? "border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50"
-      : "");
+    "py-3 px-4 inline-flex items-center gap-x-2  text-sm focus:z-10 border "
   const titleClass = buttonClass + " text-white font-bold rounded-t-xl";
   return (
     <div className="max-w-sm w-44 flex flex-col rounded-lg shadow-sm">
@@ -48,6 +45,7 @@ const MultiSelectingButtons = ({
             buttonClass + (index === options.length - 1 ? " rounded-b-xl" : "")
           }
           key={option.value}
+          style={{backgroundColor:"var(--gray-1)"}}
           onClick={() => {
             toggleStatus(option.value);
           }}

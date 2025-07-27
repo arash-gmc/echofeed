@@ -19,19 +19,26 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Theme
-          accentColor="blue"
-          grayColor="gray"
-          radius="large"
-          scaling="105%"
-        >
+        <Theme accentColor="bronze" grayColor="gray" radius="large">
           <Flex
-            className=" w-full sm:py-8 min-h-screen"
-            justify="center"
+            className=" w-full sm:py-8 h-screen"
+            justify={{ initial: "center", md: "start" }}
+            pl={{ initial: "0", sm: "6" }}
             align="start"
-            style={{ background: "var(--accent-6)" }}
+            style={{
+              backgroundImage: 'url("/auth-bg.webp")',
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              overflow: "hidden",
+            }}
           >
-            <Box className="p-8 sm:rounded-xl bg-slate-50 w-1/3 max-w-md min-w-fit z-10 max-sm:w-full max-sm:min-h-screen ">
+            <Box
+              className="p-6 sm:rounded-xl w-1/3 max-w-md min-w-fit z-10 max-xl:w-1/2 max-lg:w-full max-h-full max-sm:min-h-screen opacity-90"
+              style={{
+                backgroundColor: "var(--gray-3)",
+                overflowY: "auto",
+              }}
+            >
               {children}
             </Box>
           </Flex>

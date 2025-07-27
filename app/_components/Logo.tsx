@@ -7,6 +7,8 @@ import useTheme from "next-theme";
 
 interface Props {
   size: "sm" | "md" | "lg";
+  iconColor?: boolean;
+  textColor?: boolean;
 }
 
 const sizeMap: Record<
@@ -18,7 +20,7 @@ const sizeMap: Record<
   lg: { icon: 52, text: "8" },
 };
 
-const Logo = ({ size }: Props) => {
+const Logo = ({ size, iconColor, textColor }: Props) => {
   return (
     <Text size={size ? sizeMap[size].text : undefined} className="font-bold">
       <Flex align="end" gap="2">
@@ -26,10 +28,14 @@ const Logo = ({ size }: Props) => {
           whileHover={{ rotate: -90, scale: 1.2 }}
           transition={{ type: "tween", duration: 0.5 }}
         >
-          <SiteLogo height={sizeMap[size].icon} width={sizeMap[size].icon} />
+          <div style={{ color: iconColor ? "var(--accent-10)" : undefined }}>
+            <SiteLogo height={sizeMap[size].icon} width={sizeMap[size].icon} />
+          </div>
         </motion.div>
 
-        <Text>EchoFeed</Text>
+        <Text style={{ color: textColor ? "var(--accent-10)" : undefined }}>
+          EchoFeed
+        </Text>
       </Flex>
     </Text>
   );

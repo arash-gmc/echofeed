@@ -26,13 +26,7 @@ const LoginForm = ({ searchParams }: Props) => {
     });
   };
   return (
-    <Flex
-      direction="column"
-      align="center"
-      gap={{ initial: "5", sm: "7" }}
-      className="w-full"
-      mt="6"
-    >
+    <Flex direction="column" align="center" mt="4">
       <Logo size="lg" />
       <Flex direction="column" gap="5" className="w-full" mt="5">
         <TextField.Input
@@ -56,23 +50,28 @@ const LoginForm = ({ searchParams }: Props) => {
         </Flex>
       </Flex>
 
-      <Button size="3" type="button" disabled={loading} onClick={() => logIn()}>
-        Login
-        {loading && <Spinner />}
-      </Button>
+      <Flex justify="between" gap="3">
+        <Button
+          size="3"
+          type="button"
+          disabled={loading}
+          onClick={() => logIn()}
+        >
+          Login
+          {loading && <Spinner />}
+        </Button>
+        <Link href="/">
+          <Button size="3" type="button" variant="outline">
+            Continue as Guest
+          </Button>
+        </Link>
+      </Flex>
 
       <Text align="center" className="pt-10">
         Don&#39;t have an account?{" "}
         <Link href="/register" style={{ color: "var(--accent-9)" }}>
           Signup
         </Link>
-      </Text>
-      <Text align="center">
-        Or back to{" "}
-        <Link href="/" style={{ color: "var(--accent-9)" }}>
-          home
-        </Link>{" "}
-        without login
       </Text>
     </Flex>
   );

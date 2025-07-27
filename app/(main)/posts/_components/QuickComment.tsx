@@ -39,11 +39,11 @@ const QuickComment = ({ postId, addCount, setStatus }: Props) => {
   return (
     <Popover.Root>
       <Popover.Trigger>
-        <ButtonAnimation clickAnimation={false}>
-          <button>
+        <button>
+          <ButtonAnimation clickAnimation={false}>
             <FaRegComment />
-          </button>
-        </ButtonAnimation>
+          </ButtonAnimation>
+        </button>
       </Popover.Trigger>
       <Popover.Content style={{ width: 360 }}>
         <Flex gap="3">

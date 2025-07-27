@@ -12,7 +12,7 @@ const PostsGrid = ({ posts, isLoading }: Props) => {
   if (isLoading) return null;
   if (posts.length === 0)
     return (
-      <Flex justify="center" m="5">
+      <Flex justify="center" m="5" className="h-screen">
         <Heading>There is no post to show.</Heading>
       </Flex>
     );
