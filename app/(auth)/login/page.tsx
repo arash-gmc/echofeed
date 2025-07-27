@@ -27,7 +27,7 @@ const LoginForm = ({ searchParams }: Props) => {
   };
   return (
     <Flex direction="column" align="center" mt="4">
-      <Logo size="lg" />
+      <Logo size="lg" iconColor={true} />
       <Flex direction="column" gap="5" className="w-full" mt="5">
         <TextField.Input
           id="username"
@@ -43,14 +43,9 @@ const LoginForm = ({ searchParams }: Props) => {
           value={password}
           onChange={(e) => setPassword(e.currentTarget.value)}
         />
-        <Flex className="text-red-600 text-sm" justify="center">
-          {!!searchParams.error && (
-            <Text>Can not login with these inputs.</Text>
-          )}
-        </Flex>
       </Flex>
 
-      <Flex justify="between" gap="3">
+      <Flex justify="between" gap="3" my="5">
         <Button
           size="3"
           type="button"
@@ -67,10 +62,17 @@ const LoginForm = ({ searchParams }: Props) => {
         </Link>
       </Flex>
 
-      <Text align="center" className="pt-10">
+      <Flex className="text-red-600 text-sm" justify="center">
+        {!!searchParams.error && (
+          <Text>Can not login. Somthinge is not correct.</Text>
+        )}
+      </Flex>
+      <div className="h-48 md:hidden"></div>
+
+      <Text className="pt-10">
         Don&#39;t have an account?{" "}
         <Link href="/register" style={{ color: "var(--accent-9)" }}>
-          Signup
+          Sign up
         </Link>
       </Text>
     </Flex>

@@ -33,7 +33,10 @@ const Logo = ({ size, iconColor, textColor }: Props) => {
           </div>
         </motion.div>
 
-        <Text style={{ color: textColor ? "var(--accent-10)" : undefined }}>
+        <Text
+          style={{ color: textColor ? "var(--accent-10)" : undefined }}
+          className="select-none"
+        >
           EchoFeed
         </Text>
       </Flex>

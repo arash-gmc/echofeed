@@ -24,7 +24,7 @@ export default async function RootLayout({
             className=" w-full sm:py-8 h-screen"
             justify={{ initial: "center", md: "start" }}
             pl={{ initial: "0", sm: "6" }}
-            align="start"
+            align="center"
             style={{
               backgroundImage: 'url("/auth-bg.webp")',
               backgroundSize: "cover",
